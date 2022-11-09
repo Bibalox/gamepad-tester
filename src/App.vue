@@ -3,16 +3,30 @@
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+  <p>
+    Hello world!
+  </p>
 </template>
 
 <style lang="scss">
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
   #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  p {
+    margin: 0;
     text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
   }
 </style>
