@@ -10,9 +10,7 @@ window.addEventListener('gamepadconnected', e => {
   gamepad.connected = true
   gamepad.id = e.gamepad.id
   gamepad.mapping = e.gamepad.mapping
-
   loop()
-
   console.log(e.gamepad)
 })
 
@@ -21,14 +19,14 @@ window.addEventListener('gamepaddisconnected', () => {
 })
 
 function loop () {
-  const request = requestAnimationFrame(loop)
+  const request = window.requestAnimationFrame(loop)
   const frameState = navigator.getGamepads()[0]
 
   if (gamepad.connected) {
     gamepad.axes = frameState.axes.map(tata => tata)
     gamepad.buttons = frameState.buttons.map(tata => tata)
   } else {
-    cancelAnimationFrame(request)
+    window.cancelAnimationFrame(request)
   }
 }
 </script>
