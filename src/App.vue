@@ -23,8 +23,8 @@ function loop () {
   const frameState = navigator.getGamepads()[0]
 
   if (gamepad.connected) {
-    gamepad.axes = frameState.axes.map(tata => tata)
-    gamepad.buttons = frameState.buttons.map(tata => tata)
+    gamepad.axes = Array.from(frameState.axes)
+    gamepad.buttons = Array.from(frameState.buttons)
   } else {
     window.cancelAnimationFrame(request)
   }
